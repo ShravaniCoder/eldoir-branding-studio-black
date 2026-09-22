@@ -29,7 +29,7 @@ export default function Services() {
           </>
         }
         text="Whether you're building a brand from scratch or refining an established one, we create purposeful design across the moments that matter."
-        image={images.paper}
+        image={images.service}
       />
 
 

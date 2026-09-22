@@ -23,16 +23,18 @@ const img = (id, w = 1400) =>
 export const images = {
   hero: "/images/hero.png",
   studio: "/images/Banner.png",
-  desk: img("photo-1497366216548-37526070297c"),
-  paper: img("photo-1455390582262-044cdead277a"),
-  packaging: img("photo-1556740749-887f6717d7e4"),
-  bottle: img("photo-1547887538-e3a2f32cb1cc"),
-  workspace: img("photo-1497215842964-222b430dc094"),
-  meeting: img("photo-1521737711867-e3b97375f902"),
-  stationery: img("photo-1586953208448-b95a79798f07"),
-  books: img("photo-1543002588-bfa74002ed7e"),
-  texture: img("photo-1516979187457-637abb4f9353"),
-  architecture: img("photo-1487958449943-2429e8be8625"),
+  desk: "/images/Process.png",
+  paper: "/images/CatlogH.png",
+  packaging: "/images/Packaging.png",
+  bottle: "/images/Collector.png",
+  workspace: "/images/Collector.png",
+  meeting: "/images/AboutF.png",
+  contact: "/images/Contact.png",
+  stationery: "/images/LogoH.png",
+  books: "/images/BrochureH.png",
+  texture: "/images/Marketing.png",
+  architecture: "/images/ProcessF.png",
+  service: "/images/ServiceH.png"
 };
 
 export const stats = [

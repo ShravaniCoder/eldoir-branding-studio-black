@@ -41,7 +41,7 @@ export default function Contact() {
           </>
         }
         text="Have an idea, a new business, a brand refresh or a project that needs more clarity? Tell us what you're building."
-        image={images.meeting}
+        image={images.contact}
         actions={false}
       />
 
