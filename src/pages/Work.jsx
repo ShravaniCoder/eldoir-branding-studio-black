@@ -24,19 +24,36 @@ export default function Work() {
 
       <section className="section-pad">
         <div className="container-luxe">
-          <Reveal>
-            <div className="flex flex-wrap gap-2">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setFilter(cat)}
-                  className={`rounded-full px-5 py-2.5 text-[9px] font-semibold uppercase tracking-[.14em] transition ${filter === cat ? "bg-espresso text-ivory" : "border border-espresso/10 bg-ivory/55 text-taupe hover:bg-ivory"}`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </Reveal>
+        <Reveal>
+  <div className="flex flex-wrap gap-2">
+    {categories.map((cat) => (
+      <button
+        key={cat}
+        onClick={() => setFilter(cat)}
+        className={`
+          rounded-full
+          border
+          px-5
+          py-2.5
+          text-[9px]
+          font-semibold
+          uppercase
+          tracking-[.14em]
+          transition-all
+          duration-300
+
+          ${
+            filter === cat
+              ? "border-[#A88B5E] bg-[#A88B5E] text-[#080808] shadow-[0_8px_25px_rgba(168,139,94,0.18)]"
+              : "border-[#F0EBE2]/10 bg-[#202020]/70 text-[#81776B] hover:border-[#A88B5E]/50 hover:bg-[#A88B5E]/10 hover:text-[#F0EBE2]"
+          }
+        `}
+      >
+        {cat}
+      </button>
+    ))}
+  </div>
+</Reveal>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {visible.map((item, i) => (
