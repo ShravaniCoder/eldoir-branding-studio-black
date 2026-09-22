@@ -164,14 +164,16 @@ export const approach = [
 ];
 
 export const work = [
-  { name: "Aurelia", category: "Brand Identity", image: images.stationery },
+  { name: "Aurelia", category: "Logo & Brand Identity", image: images.stationery },
+    { name: "Arte", category: "Product Catalogue", image: images.bottle },
+        { name: "Bloom", category: "Brochure & Company Profile", image: images.texture },
   { name: "Lume", category: "Packaging Design", image: images.packaging },
-  { name: "Velora", category: "Corporate Identity", image: images.books },
+
+   { name: "Maison", category: "Brand Collateral", image: images.studio },
+
   { name: "Nexa", category: "Marketing Collateral", image: images.paper },
-  { name: "Arte", category: "Product Catalogue", image: images.bottle },
-  { name: "Bloom", category: "Packaging & Collateral", image: images.texture },
-  { name: "Maison", category: "Brand Identity", image: images.studio },
-  { name: "Orra", category: "Editorial Design", image: images.desk },
+ 
+
 ];
 
 export const process = [
