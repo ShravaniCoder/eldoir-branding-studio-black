@@ -12,7 +12,7 @@ const icons = [Search, Lightbulb, PenTool, Sparkles, PackageCheck];
 export default function Process() {
   return (
     <>
-      <SEO title="Our Process" description="Discover the ELDOIR branding process from discovery and strategy through design, refinement and final delivery." path="/process" />
+      <SEO title="Our Process" description="Discover ELDOIR’s branding process, from discovery and strategy through design, refinement and final delivery." keywords="branding process, brand strategy process, design workflow, brand identity development, packaging design process, ELDOIR Branding Studio" path="/process" />
       <PageHero
         eyebrow="Our Process"
         title={<>A Clear Path<br />from Ideas to Impact.</>}

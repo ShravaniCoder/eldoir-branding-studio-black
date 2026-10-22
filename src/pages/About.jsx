@@ -13,8 +13,9 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About ELDOIR"
-        description="Meet ELDOIR, a branding and design studio focused on strategy-led identities and thoughtful visual communication."
+        title="About Eldoir | Creative Branding & Design Studio"
+        description="Discover Eldoir Branding Studio's creative approach to branding, visual identity and design. Learn how thoughtful design can help your business stand out."
+        keywords="about ELDOIR, branding agency Mumbai, creative design studio India, brand strategy, visual identity design, ELDOIR Branding Studio"
         path="/about"
       />
 

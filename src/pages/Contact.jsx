@@ -5,6 +5,9 @@ import {
   Mail,
   Phone,
   Clock3,
+  Check,
+  Loader2,
+  X,
 } from "lucide-react";
 
 import SEO from "../components/SEO";
@@ -14,17 +17,51 @@ import { SITE, images, socials } from "../data/siteData";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    setSent(true);
+
+    setSending(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(
+        "https://formspree.io/f/xeaokeew",
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      form.reset();
+      setSent(true);
+    } catch (err) {
+      setError(
+        "Something went wrong while sending your enquiry. Please try again."
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
     <>
       <SEO
-        title="Contact ELDOIR"
-        description="Start a branding, identity, packaging or design project with ELDOIR Branding Studio in Mumbai, India."
+        title="Contact Eldoir Branding Studio | Start Your Project"
+        description="Ready to build your brand? Contact Eldoir Branding Studio to discuss your branding, visual identity and creative design"
+        keywords="contact ELDOIR, branding studio Mumbai contact, hire brand identity designer, packaging design enquiry, creative agency India"
         path="/contact"
       />
 
@@ -217,94 +254,9 @@ export default function Contact() {
                   </p>
 
 
-                  {sent ? (
+                  {/* CONTACT FORM */}
 
-                    /* ==========================================
-                       SUCCESS STATE
-                    =========================================== */
-
-                    <div className="py-20 text-center">
-
-                      <span
-                        className="
-                          mx-auto
-                          grid
-                          h-14
-                          w-14
-                          place-items-center
-                          rounded-full
-                          bg-[#151210]
-                          text-[#A88B5E]
-                        "
-                      >
-                        <ArrowUpRight size={18} />
-                      </span>
-
-
-                      <h2
-                        className="
-                          serif
-                          mt-6
-                          text-4xl
-                          text-[#151210]
-                        "
-                      >
-                        Thank you.
-                      </h2>
-
-
-                      <p
-                        className="
-                          mx-auto
-                          mt-3
-                          max-w-md
-                          text-sm
-                          leading-6
-                          text-[#81776B]
-                        "
-                      >
-                        Your enquiry has been captured in this demo form.
-                        Connect the submit handler to your preferred email
-                        service or backend.
-                      </p>
-
-
-                      <button
-                        type="button"
-                        onClick={() => setSent(false)}
-                        className="
-                          mt-6
-                          inline-flex
-                          items-center
-                          justify-center
-                          gap-2
-                          rounded-full
-                          bg-[#A88B5E]
-                          px-6
-                          py-3
-                          text-[9px]
-                          font-semibold
-                          uppercase
-                          tracking-[.18em]
-                          text-[#080808]
-                          transition-all
-                          duration-300
-                          hover:bg-[#151210]
-                          hover:text-[#F0EBE2]
-                        "
-                      >
-                        Send Another
-                      </button>
-
-                    </div>
-
-                  ) : (
-
-                    /* ==========================================
-                       FORM
-                    =========================================== */
-
-                    <form
+                  <form
                       onSubmit={submit}
                       className="mt-7 grid gap-5 sm:grid-cols-2"
                     >
@@ -468,6 +420,7 @@ export default function Contact() {
 
                       <button
                         type="submit"
+                        disabled={sending}
                         className="
                           group
                           inline-flex
@@ -496,22 +449,49 @@ export default function Contact() {
                         "
                       >
 
-                        Send Enquiry
+                        {sending ? (
+                          <>
+                            <Loader2
+                              size={15}
+                              className="animate-spin"
+                            />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            Send Enquiry
 
-                        <ArrowUpRight
+                            <ArrowUpRight
                           size={15}
                           className="
                             transition-transform
                             duration-300
                             group-hover:translate-x-0.5
                             group-hover:-translate-y-0.5
-                          "
-                        />
-
+                              "
+                            />
+                          </>
+                        )}
                       </button>
 
-                    </form>
+                  </form>
 
+                  {error && (
+                    <div
+                      className="
+                        mt-4
+                        rounded-xl
+                        border
+                        border-red-400/20
+                        bg-red-500/5
+                        px-4
+                        py-3
+                        text-sm
+                        text-red-700
+                      "
+                    >
+                      {error}
+                    </div>
                   )}
 
                 </div>
@@ -526,6 +506,169 @@ export default function Contact() {
 
       </section>
 
+
+      {/* =====================================================
+          PREMIUM SUCCESS POPUP
+          Opens only after a successful Formspree submission.
+      ====================================================== */}
+
+      {sent && (
+        <div
+          className="
+            fixed inset-0 z-[9999]
+            flex items-center justify-center
+            bg-[#080808]/75
+            px-4
+            backdrop-blur-md
+          "
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="contact-success-title"
+        >
+          <div
+            className="
+              relative
+              w-full
+              max-w-md
+              overflow-hidden
+              rounded-[2rem]
+              border border-[#A88B5E]/35
+              bg-[#151210]
+              p-8
+              text-center
+              shadow-[0_35px_100px_rgba(0,0,0,.65)]
+              sm:p-10
+            "
+          >
+            <div
+              className="
+                pointer-events-none
+                absolute
+                -right-20
+                -top-20
+                h-48
+                w-48
+                rounded-full
+                bg-[#A88B5E]/10
+                blur-3xl
+              "
+            />
+
+            <button
+              type="button"
+              onClick={() => setSent(false)}
+              aria-label="Close success message"
+              className="
+                absolute
+                right-4
+                top-4
+                grid
+                h-9
+                w-9
+                place-items-center
+                rounded-full
+                border border-[#F0EBE2]/10
+                bg-[#080808]/50
+                text-[#F0EBE2]/70
+                transition-all
+                duration-300
+                hover:border-[#A88B5E]/50
+                hover:bg-[#A88B5E]
+                hover:text-[#080808]
+              "
+            >
+              <X size={16} />
+            </button>
+
+            <div className="relative z-10">
+
+              <span
+                className="
+                  mx-auto
+                  grid
+                  h-16
+                  w-16
+                  place-items-center
+                  rounded-full
+                  border border-[#A88B5E]/40
+                  bg-[#A88B5E]/10
+                  text-[#A88B5E]
+                "
+              >
+                <Check size={26} />
+              </span>
+
+              <p
+                className="
+                  mt-6
+                  text-[9px]
+                  font-semibold
+                  uppercase
+                  tracking-[.28em]
+                  text-[#A88B5E]
+                "
+              >
+                Enquiry Received
+              </p>
+
+              <h2
+                id="contact-success-title"
+                className="
+                  serif
+                  mt-3
+                  text-4xl
+                  text-[#F0EBE2]
+                  sm:text-5xl
+                "
+              >
+                Thank you.
+              </h2>
+
+              <p
+                className="
+                  mx-auto
+                  mt-4
+                  max-w-sm
+                  text-sm
+                  leading-7
+                  text-[#81776B]
+                "
+              >
+                Your enquiry has been successfully sent to ELDOIR Branding
+                Studio. We look forward to learning more about your project.
+              </p>
+
+              <button
+                type="button"
+                onClick={() => setSent(false)}
+                className="
+                  mt-7
+                  inline-flex
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-full
+                  border border-[#A88B5E]
+                  bg-[#A88B5E]
+                  px-7
+                  py-3
+                  text-[9px]
+                  font-semibold
+                  uppercase
+                  tracking-[.18em]
+                  text-[#080808]
+                  transition-all
+                  duration-300
+                  hover:bg-[#F0EBE2]
+                "
+              >
+                Close
+              </button>
+
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* =====================================================
           FINAL CTA

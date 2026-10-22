@@ -2,10 +2,10 @@ export const SITE = {
   name: "ELDOIR",
   tagline: "Branding Studio",
   city: "Mumbai, India",
-  email: "hello@eldoirbrandingstudio.com",
+  email: "connect@eldoirbrandingstudio.com",
   phone: "+91 91656 43210",
   whatsapp: "https://wa.me/919165643210",
-  siteUrl: "https://your-domain.com",
+  siteUrl: "https://eldoirbrandingstudio.com",
 };
 
 export const navItems = [
@@ -185,7 +185,7 @@ export const process = [
 ];
 
 export const socials = [
-  ["Instagram", "https://instagram.com/"],
+  ["Instagram", "https://www.instagram.com/eldoir_branding_studio/"],
   ["LinkedIn", "https://linkedin.com/"],
   ["Behance", "https://behance.net/"],
   ["Pinterest", "https://pinterest.com/"],

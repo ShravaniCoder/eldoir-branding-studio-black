@@ -58,7 +58,7 @@ This is the main content and asset file. Update:
 - Social links
 - Image URLs
 
-Also replace `https://your-domain.com` in:
+Also replace `https://eldoirbrandingstudio.com` in:
 
 - `src/data/siteData.js`
 - `index.html`

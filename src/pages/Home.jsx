@@ -25,8 +25,9 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Ideas into Iconic Brands"
-        description="ELDOIR Branding Studio creates distinctive brand identities, packaging, catalogues, brochures and marketing collateral for ambitious brands."
+        title="Branding Studio & Brand Identity Design | Eldoir	"
+        description="ELDOIR is a Mumbai branding studio creating distinctive brand identities, packaging, catalogues, brochures and marketing collateral for ambitious brands. Build a memorable brand with Eldoir Branding Studio. Explore creative branding, brand identity and design solutions tailored to your business."
+        keywords="branding studio Mumbai, brand identity design India, logo design, packaging design, product catalogue design, brochure design, marketing collateral, ELDOIR Branding Studio"
       />
 
       {/* =====================================================

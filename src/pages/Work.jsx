@@ -13,7 +13,7 @@ export default function Work() {
 
   return (
     <>
-      <SEO title="Our Work" description="Explore selected ELDOIR branding, packaging, corporate identity, catalogue and marketing design projects." path="/work" />
+      <SEO title="Branding Portfolio & Creative Projects | Eldoir" description="Explore the Eldoir Branding Studio portfolio and discover branding, visual identity and creative design projects developed for businesses." keywords="branding portfolio, brand identity projects, packaging design portfolio, catalogue design examples, creative design work, ELDOIR Branding Studio" path="/work" />
       <PageHero
         eyebrow="Portfolio / Our Work"
         title={<>Designs That<br />Make an Impact.</>}

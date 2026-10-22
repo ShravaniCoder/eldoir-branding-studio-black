@@ -1,6 +1,6 @@
-import { ArrowUpRight, Instagram, Linkedin, Dribbble } from "lucide-react";
+import { ArrowUpRight, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { navItems, SITE } from "../data/siteData";
+import { navItems, SITE, socials } from "../data/siteData";
 
 export default function Footer() {
   return (
@@ -34,8 +34,8 @@ export default function Footer() {
               <p>{SITE.city}</p>
             </div>
             <div className="mt-6 flex gap-2">
-              {[Instagram, Linkedin, Dribbble].map((Icon, i) => (
-                <a key={i} href="#" aria-label="Social link" className="grid h-9 w-9 place-items-center rounded-full border border-ivory/15 hover:bg-ivory/10">
+              {[[Instagram, socials[0]], [Linkedin, socials[1]]].map(([Icon, social]) => (
+                <a key={social[0]} href={social[1]} target="_blank" rel="noopener noreferrer" aria-label={`ELDOIR on ${social[0]}`} className="grid h-9 w-9 place-items-center rounded-full border border-ivory/15 hover:bg-ivory/10">
                   <Icon size={15} />
                 </a>
               ))}

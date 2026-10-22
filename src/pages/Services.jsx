@@ -10,8 +10,9 @@ export default function Services() {
   return (
     <>
       <SEO
-        title="Services"
-        description="Brand identity, packaging, catalogue, brochure, collateral and marketing design services by ELDOIR Branding Studio."
+        title="Branding & Creative Design Services | Eldoir"
+        description="Explore branding and creative design services by Eldoir Branding Studio. Build a consistent brand identity that reflects your business vision and values."
+        keywords="branding services Mumbai, logo design, brand identity design, packaging design, product catalogue design, brochure design, company profile design, marketing collateral"
         path="/services"
       />
 

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { SITE } from "../data/siteData";
 
-export default function SEO({ title, description, path = "/" }) {
+export default function SEO({ title, description, keywords = "branding studio, brand identity design, packaging design, catalogue design, brochure design, Mumbai India", path = "/" }) {
   useEffect(() => {
     const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name} | ${SITE.tagline}`;
     document.title = fullTitle;
@@ -29,7 +29,9 @@ export default function SEO({ title, description, path = "/" }) {
     };
 
     setMeta("description", description);
-    setMeta("robots", "index, follow");
+    setMeta("keywords", keywords);
+    setMeta("robots", "index, follow, max-image-preview:large");
+    setMeta("viewport", "width=device-width, initial-scale=1.0");
     setProperty("og:title", fullTitle);
     setProperty("og:description", description);
     setProperty("og:type", "website");
@@ -67,7 +69,7 @@ export default function SEO({ title, description, path = "/" }) {
       document.head.appendChild(script);
     }
     script.textContent = JSON.stringify(ld);
-  }, [title, description, path]);
+  }, [title, description, keywords, path]);
 
   return null;
 }
