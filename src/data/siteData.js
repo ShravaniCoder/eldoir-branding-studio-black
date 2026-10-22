@@ -187,8 +187,7 @@ export const process = [
 export const socials = [
   ["Instagram", "https://www.instagram.com/eldoir_branding_studio/"],
   ["LinkedIn", "https://linkedin.com/"],
-  ["Behance", "https://behance.net/"],
-  ["Pinterest", "https://pinterest.com/"],
+  
 ];
 
 export const testimonials = [
